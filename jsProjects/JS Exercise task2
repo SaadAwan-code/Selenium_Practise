@@ -1,0 +1,33 @@
+/* Given an integer n, print Fibonacci sequence upto n. The Fibonacci
+ sequence is given by 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 and so on. 
+ Do this without recursion.
+if n = 24 
+print 0, 1, 1, 2, 3, 5, 8, 13, 21
+*/
+
+function fibonanchi(n)
+{
+if (n<=1)
+    return console.log("0");
+else 
+    return display(n);
+
+}
+
+function display(n)
+{
+    let a=0;
+    let b=1;
+    let next = b+a;
+    let result = a +" "+b;
+    while(next<=n)
+    {
+        result += " " + next;
+        a=b;
+        b=next;
+        next=b+a;
+    }
+    console.log(result);
+}
+
+fibonanchi(24);

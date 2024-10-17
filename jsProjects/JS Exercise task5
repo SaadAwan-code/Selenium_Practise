@@ -1,0 +1,31 @@
+
+/*Write a JavaScript program to display the Today date with day
+and time in the following format.  
+Sample Output : Today is : Tuesday 14th May 2024.
+Time is : 10:30 pm
+ */
+
+function todaydate()
+{
+    let today = new Date();
+    let day =today.getDay();
+    let daylist=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    
+    let date = today.getDate();
+    
+    let month= today.getMonth();
+    let monthlist=["Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+    
+    let year = today.getFullYear();
+    console.log("Today is: "+daylist[day]+" "+date+"th"+" "+monthlist[month]+" "+year+".");
+
+    let hour=today.getHours();
+    let minutes=today.getMinutes();
+    let det_pm=(hour >= 12) ? "PM" : "AM";
+    hour = (hour >= 12) ? hour - 12 : hour;
+
+    console.log("Time is: "+hour+":"+minutes+" "+det_pm)
+}
+     
+
+todaydate();

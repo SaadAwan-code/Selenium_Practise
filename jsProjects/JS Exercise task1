@@ -1,0 +1,35 @@
+/* Given two strings. write a function to check whether the given
+ strings are anagrams of each other or not. For example, “abcd” and 
+ “dabc” are an anagram of each other.*/
+ 
+function checkAnagram(s1, s2) {
+    if (s1.length !== s2.length) {
+        return false;
+    }
+
+ return sorting(s1,s2);   
+}
+
+function sorting(s1,s2){
+
+     let A1= s1.split('').sort();
+     let A2= s2.split('').sort();
+
+
+    for(let i=0; i<s1.length; i++)
+    {
+        if( A1[i]==A2[i])
+        {
+            return true;
+        }
+        else 
+            return false;
+    }
+
+}
+
+let s1="abcd";
+let s2="dabc";
+
+console.log(checkAnagram(s1,s2));
+

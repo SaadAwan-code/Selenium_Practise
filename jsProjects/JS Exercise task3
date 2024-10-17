@@ -1,0 +1,42 @@
+/* Given a string s, write a function to check valid input.
+ "[{()}]", "[]{}()", "{}" are valid. "[{)" is invalid.*/ 
+
+ function ValidInput(s) {
+
+    if (s.length === 0) {
+        return true;
+    }
+
+    return comparison(s);
+}
+
+function comparison(s) {
+    let stack = [];
+
+    let brackets = {
+        ')' : '(',
+        ']' : '[',
+        '}' : '{'
+    };
+
+    for (let char of s) {
+
+        if (char === '(' || char === '{' || char === '[') {
+            stack.push(char);
+        } 
+
+        else if (char === ')' || char === '}' || char === ']') {
+
+            if (stack.length === 0 || stack.pop() !== brackets[char]) {
+                return false; 
+            }
+        }
+    }
+
+    return stack.length === 0;
+}
+
+console.log(ValidInput("[{()}]"));  
+console.log(ValidInput("[]{}()"));  
+console.log(ValidInput("{}"));      
+console.log(ValidInput("[{)"));     

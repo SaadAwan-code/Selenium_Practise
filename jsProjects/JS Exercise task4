@@ -1,0 +1,31 @@
+/*Given an array of integers, write a function that returns an array 
+containing all the duplicate elements in the input array.
+
+input array = [1, 2, 3, 4, 2, 5, 6, 7, 8, 1];
+expected output : [1, 2]*/
+
+function duplicate_Elements(s)
+{
+return finding(s); 
+}
+
+function finding(s)
+{
+    let result=[];
+for(let i=0; i<s.length ; i++)
+{
+    for(let j=i+1; j<s.length;j++)
+    {
+        if(s[i]==s[j])
+            result.push(s[i]);
+    }
+}
+
+return console.log("Output is: "+ result);
+}
+
+let Arr=[1, 2, 3, 4, 2, 5, 6, 7, 8, 1];
+duplicate_Elements(Arr);
+
+
+
